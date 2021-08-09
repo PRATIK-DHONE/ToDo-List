@@ -12,6 +12,15 @@ const Todo = () =>{
             setInputData("")
         }
     }
+    const deleteItem= (id) =>{
+        const updateitems = items.filter((elem,ind)=>{
+            return ind !== id}
+        )
+        setItems(updateitems)
+    }
+    const removeAll=()=>{
+        setItems([])
+    }
     return(
         <>
             <div className = "main-div">
@@ -34,7 +43,9 @@ const Todo = () =>{
                                 return(
                                     <div className="eachItem" key={ind}>
                                     <h3>{elem}</h3>
-                                    <i className="fa fa-trash-alt add-btn" title="Delete Item"></i>
+                                    <i className="fa fa-trash-alt add-btn" title="Delete Item"
+                                        onClick={()=>deleteItem(ind)}
+                                    ></i>
                                     </div>
                                 )
                             })
@@ -45,6 +56,7 @@ const Todo = () =>{
                         <button
                             className='btn effect04'
                             data-sm-link-text='Remove All'
+                            onClick={removeAll}
                         ><span>Check List</span></button>
                     </div>
                 </div>
