@@ -53,7 +53,7 @@ const Todo = () =>{
                                     </div>
                                 )
                             })
-                        }
+                        } 
                         
                     </div>
                     <div className="showItems">
