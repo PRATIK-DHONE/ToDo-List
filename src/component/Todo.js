@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 import logo from '../image/logo.svg'
+import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const Todo = () =>{
     const [inputData, setInputData] = useState('');
@@ -34,8 +36,9 @@ const Todo = () =>{
                             value={inputData}
                             onChange={(e)=> setInputData(e.target.value)}
                         />
-                        <i className="fa fa-plus add-btn" title="Add Item"
-                        onClick={addItem}></i>
+                        {/* <i className="fa fa-plus add-btn" title="Add Item"
+                        onClick={addItem}></i> */}
+                        <AddIcon className="fa fa-plus add-btn" onClick={addItem}/>
                     </div>
                     <div className="showItems">
                         {
@@ -43,9 +46,10 @@ const Todo = () =>{
                                 return(
                                     <div className="eachItem" key={ind}>
                                     <h3>{elem}</h3>
-                                    <i className="fa fa-trash-alt add-btn" title="Delete Item"
+                                    {/* <i className="fa fa-trash-alt add-btn" title="Delete Item"
                                         onClick={()=>deleteItem(ind)}
-                                    ></i>
+                                    ></i> */}
+                                    <DeleteIcon className="fa fa-trash-alt add-btn" onClick={()=>deleteItem(ind)} />
                                     </div>
                                 )
                             })
